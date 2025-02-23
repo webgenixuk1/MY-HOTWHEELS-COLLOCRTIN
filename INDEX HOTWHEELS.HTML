@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Wheels Collection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+        h1 {
+            color: #ff4500;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .car {
+            margin: 10px;
+            padding: 10px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .car img {
+            width: 200px;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Hot Wheels Collection</h1>
+    <div class="gallery" id="gallery"></div>
+    
+    <script>
+        const cars = [
+            { name: "Mustang GT", img: "images/mustang.jpg" },
+            { name: "Dodge Charger", img: "images/charger.jpg" },
+            { name: "Lamborghini Aventador", img: "images/lamborghini.jpg" }
+        ];
+        
+        const gallery = document.getElementById("gallery");
+        
+        cars.forEach(car => {
+            const div = document.createElement("div");
+            div.className = "car";
+            div.innerHTML = `<img src="${car.img}" alt="${car.name}"><p>${car.name}</p>`;
+            gallery.appendChild(div);
+        });
+    </script>
+</body>
+</html>
